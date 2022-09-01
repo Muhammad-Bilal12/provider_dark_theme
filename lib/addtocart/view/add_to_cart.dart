@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:provider_practice_tut3/addtocart/provider/cart_provider.dart';
 import 'package:provider_practice_tut3/addtocart/view/cart_item.dart';
 
+import 'custom_drawer.dart';
+
 class AddCartView extends StatefulWidget {
   const AddCartView({Key? key}) : super(key: key);
 
@@ -11,6 +13,8 @@ class AddCartView extends StatefulWidget {
 }
 
 class _AddCartViewState extends State<AddCartView> {
+  bool isSelected = false;
+
   @override
   Widget build(BuildContext context) {
     final CartProvider cartProvider = Provider.of<CartProvider>(context);
@@ -44,6 +48,7 @@ class _AddCartViewState extends State<AddCartView> {
               ),
             );
           }),
+      drawer: CustomDrawer(),
     );
   }
 }
